@@ -1,0 +1,14 @@
+streamlit
+langchain
+langchain-community
+langchain-core
+langchain-groq
+python-dotenv
+scikit-learn
+numpy
+pillow
+pytz
+faiss-cpu
+sentence-transformers
+pypdf
+docx2txt
