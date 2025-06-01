@@ -21,7 +21,7 @@
 
 | Logo                     | Banner                          |
 |--------------------------|----------------------------------|
-| ![Logo](image/logo.png)  | ![Banner](image/ScholarMate.png) |
+| ![Logo](images/logo.png)  | ![Banner](images/ScholarMate.png) |
 
 ---
 
