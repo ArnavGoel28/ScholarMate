@@ -30,9 +30,9 @@ st.set_page_config(
 # -------------------- Time-Based Greeting --------------------
 def get_greeting():
     hour = datetime.now(pytz.timezone('UTC')).hour
-    if 5 <= hour < 12:
+    if 4 <= hour < 12:
         return "🌞 Good Morning! Ready to learn?"
-    elif 12 <= hour < 17:
+    elif 12 <= hour < 16:
         return "🌤️ Good Afternoon! Let's study!"
     else:
         return "🌆 Good Evening! Time for knowledge!"
