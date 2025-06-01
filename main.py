@@ -17,6 +17,10 @@ import pytz
 import os
 from PIL import Image
 import base64
+import requests
+from datetime import datetime
+import pytz
+
 load_dotenv()
 
 # -------------------- Page Configuration --------------------
@@ -28,14 +32,25 @@ st.set_page_config(
 )
 
 # -------------------- Time-Based Greeting --------------------
+def get_user_timezone():
+    try:
+        response = requests.get("https://ipinfo.io/json")
+        data = response.json()
+        return data.get("timezone", "UTC")
+    except:
+        return "UTC"
+
 def get_greeting():
-    hour = datetime.now(pytz.timezone('UTC')).hour
+    user_timezone = get_user_timezone()
+    now = datetime.now(pytz.timezone(user_timezone))
+    hour = now.hour
+
     if 4 <= hour < 12:
-        return "🌞 Good Morning! Ready to learn?"
+        return "Good Morning! Ready to learn?"
     elif 12 <= hour < 16:
-        return "🌤️ Good Afternoon! Let's study!"
+        return "Good Afternoon! Let's study!"
     else:
-        return "🌆 Good Evening! Time for knowledge!"
+        return "Good Evening! Time for knowledge!"
 
 # -------------------- Theme System --------------------
 def apply_theme(theme_name, dark_mode):
@@ -151,7 +166,7 @@ st.markdown(f"""
     .brand-logo {{
         position: absolute;
         top: -65px;
-        left: 60px;
+        left: 85px;
         display: flex;
         align-items: center;
         gap: 10px;
