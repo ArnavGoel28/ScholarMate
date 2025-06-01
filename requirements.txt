@@ -1,12 +1,24 @@
+# Core Requirements
 streamlit
-langchain
 langchain-groq
+langchain
 langchain-community
-huggingface-hub
-faiss-cpu
+
+# Document Processing
+pypdf
+docx2txt
+python-dotenv
+
+# Embeddings & ML
+sentence-transformers
 scikit-learn
 numpy
+
+# Utilities
 pytz
-python-dotenv
-requests
-Pillow
+accelerate
+protobuf
+
+# Performance Optimizers
+asyncio
+aiofiles
