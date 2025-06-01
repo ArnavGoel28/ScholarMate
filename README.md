@@ -1,6 +1,6 @@
 # ScholarMate
 
-![ScholarMate Banner](image/ScholarMate.png)
+![ScholarMate Banner](images/ScholarMate.png)
 
 **ScholarMate** is an AI-powered academic assistant that helps students engage with their learning materials more efficiently. It uses Streamlit and LangChain with Groq’s LLaMA 3 model to provide features like document-based question answering, summarization, MCQ generation, and topic-wise explanations — all through an intuitive web interface.
 
@@ -21,7 +21,7 @@
 
 | Logo                     | Banner                          |
 |--------------------------|----------------------------------|
-| ![Logo](image/logo.png)  | ![Banner](image/ScholarMate.png) |
+| ![Logo](images/logo.png)  | ![Banner](images/ScholarMate.png) |
 
 ---
 
