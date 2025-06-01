@@ -313,7 +313,7 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 # -------------------- Brand Logo in Header --------------------
-header_logo_path = "ScholarMate/images/ScholarMate.png"  # Update this path to your actual logo file
+header_logo_path = "images/ScholarMate.png"  # Update this path to your actual logo file
 
 try:
     # Read and encode the logo image
@@ -349,7 +349,7 @@ except Exception as e:
 # -------------------- Sidebar --------------------
 with st.sidebar:
     # Logo and header
-    logo_path = "ScholarMate/images/logo.png"
+    logo_path = "images/logo.png"
     st.markdown(f"""
 <div class="brand-logo">
     <img src="data:image/png;base64,{base64.b64encode(open(logo_path, "rb").read()).decode()}">
