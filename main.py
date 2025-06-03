@@ -139,8 +139,6 @@ def apply_theme(theme_name, dark_mode):
     
     return theme
 
-current_theme = apply_theme(st.session_state.theme, st.session_state.dark_mode)
-
 # -------------------- Initialize Session State --------------------
 if 'theme' not in st.session_state:
     st.session_state.theme = 'academic'
@@ -159,6 +157,7 @@ if 'mcqs_output' not in st.session_state:
 if 'topic_explanation_output' not in st.session_state:
     st.session_state.topic_explanation_output = ""
 
+current_theme = apply_theme(st.session_state.theme, st.session_state.dark_mode)
 # -------------------- Enhanced CSS --------------------
 st.markdown(f"""
 <style>
@@ -167,6 +166,15 @@ html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
     background-color: {current_theme['background']} !important;
     color: {current_theme['text']} !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}}
+
+/* ✅ Force text color on all key visible elements */
+h1, h2, h3, h4, h5, h6,
+p, div, span, label,
+.stTextInput, .stTextArea,
+.stSelectbox, .stExpander,
+.stSlider, .stToggle, .stMarkdown {{
+    color: {current_theme['text']} !important;
 }}
 
 /* 📚 Sidebar */
