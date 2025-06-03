@@ -12,6 +12,7 @@ python-dotenv
 # Embeddings & ML
 sentence-transformers
 scikit-learn
+faiss-cpu
 numpy
 
 # Utilities
