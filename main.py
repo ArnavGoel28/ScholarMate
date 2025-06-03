@@ -224,7 +224,7 @@ p, div, span, label,
 
 /* 🔘 Button styles */
 .stButton>button {{
-    background-color: white !important;
+    background-color: {current_theme['background']} !important;
     color: black !important;
     border-radius: 12px !important;
     padding: 10px 20px !important;
@@ -324,11 +324,11 @@ p, div, span, label,
     transition: all 0.3s ease;
 }}
 /* Style the drag-and-drop file uploader container */
-    .stFileUploader > div > div {{
-        background-color: var(--secondary-background-color);
-        border: 2px dashed var(--neutral-400);  /* Adjust border color */
-        color: var(--text-color);
-    }}
+.stFileUploader > div > div {{
+    background-color: var(--secondary-background-color);
+    border: 2px dashed var(--neutral-400);  /* Adjust border color */
+    color: var(--text-color);
+}}
 
 /* 🔘 Secondary buttons */
 .stButton>button[kind="secondary"] {{
