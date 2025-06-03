@@ -162,31 +162,31 @@ if 'topic_explanation_output' not in st.session_state:
 # -------------------- Enhanced CSS --------------------
 st.markdown(f"""
 <style>
-/* Global Background Fix */
+/* 🌐 Global App Background */
 html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
-    background-color: {current_theme['background']};
-    color: {current_theme['text']};
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: {current_theme['background']} !important;
+    color: {current_theme['text']} !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }}
 
-/* Sidebar Styling Fix */
+/* 📚 Sidebar */
 [data-testid="stSidebar"] {{
     background-color: {current_theme['sidebar']} !important;
-    color: white;
+    color: white !important;
 }}
 
-/* Sidebar Elements */
+/* 🎛 Sidebar widgets */
 [data-testid="stSidebar"] .stSelectbox, 
 [data-testid="stSidebar"] .stExpander, 
 [data-testid="stSidebar"] .stSlider, 
 [data-testid="stSidebar"] .stToggle {{
-    background-color: {current_theme['card']};
-    color: {current_theme['text']};
-    border-radius: 10px;
-    padding: 10px;
+    background-color: {current_theme['card']} !important;
+    color: {current_theme['text']} !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
 }}
 
-/* Brand logo styles */
+/* 🏷 Brand logo */
 .brand-logo {{
     position: absolute;
     top: -65px;
@@ -208,18 +208,18 @@ html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
     padding-top: 60px;
 }}
 
-/* Main container */
+/* 🧱 Main container */
 .main {{
-    background-color: {current_theme['background']};
+    background-color: {current_theme['background']} !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }}
 
-/* Button styles */
+/* 🔘 Button styles */
 .stButton>button {{
     background-color: white !important;
     color: black !important;
-    border-radius: 12px;
-    padding: 10px 20px;
+    border-radius: 12px !important;
+    padding: 10px 20px !important;
     border: 1px solid {current_theme['border']} !important;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -234,104 +234,96 @@ html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }}
 
-/* Input fields */
+/* 📝 Input fields */
 .stTextInput>div>div>input,
 .stTextArea>div>div>textarea {{
-    border-radius: 12px;
-    padding: 12px;
-    border: 1px solid {current_theme['border']};
-    background-color: {current_theme['input_bg']};
+    border-radius: 12px !important;
+    padding: 12px !important;
+    border: 1px solid {current_theme['border']} !important;
+    background-color: {current_theme['input_bg']} !important;
     color: {current_theme['input_text']} !important;
 }}
 
-/* Placeholder */
+/* 🔍 Placeholder */
 .stTextInput>div>div>input::placeholder,
 .stTextArea>div>div>textarea::placeholder {{
     color: {current_theme['input_text']} !important;
     opacity: 0.7 !important;
 }}
 
-/* Focus effect */
+/* 🎯 Focus effect */
 .stTextInput>div>div>input:focus,
 .stTextArea>div>div>textarea:focus {{
     border-color: {current_theme['primary']} !important;
     box-shadow: 0 0 0 2px {current_theme['primary']}33 !important;
 }}
 
-/* Custom card */
+/* 🧾 Custom card */
 .custom-card {{
-    background-color: {current_theme['card']};
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: {current_theme['text']};
+    background-color: {current_theme['card']} !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    color: {current_theme['text']} !important;
 }}
 
-/* Confidence indicators */
-.confidence-high {{
-    color: #28a745;
-    font-weight: bold;
-}}
-.confidence-medium {{
-    color: #ffc107;
-    font-weight: bold;
-}}
-.confidence-low {{
-    color: #dc3545;
-    font-weight: bold;
-}}
+/* ✅ Confidence indicators */
+.confidence-high {{ color: #28a745; font-weight: bold; }}
+.confidence-medium {{ color: #ffc107; font-weight: bold; }}
+.confidence-low {{ color: #dc3545; font-weight: bold; }}
 
-/* Greeting */
+/* 👋 Greeting */
 .greeting {{
     font-size: 1.2rem;
     padding: 10px 0px 0px 0px;
     margin-bottom: 20px;
     text-align: center;
-    color: {current_theme['text']};
+    color: {current_theme['text']} !important;
 }}
 
-/* Tool headers */
+/* 🔧 Tool headers */
 .tool-header {{
     font-size: 1.1rem;
     margin-bottom: 15px;
-    color: {current_theme['text']};
+    color: {current_theme['text']} !important;
     font-weight: 600;
 }}
 
-/* Document list */
+/* 📑 Document list */
 .document-list {{
     padding: 10px;
-    background-color: {current_theme['card']};
-    border-radius: 8px;
-    margin-bottom: 15px;
+    background-color: {current_theme['card']} !important;
+    border-radius: 8px !important;
+    margin-bottom: 15px !important;
 }}
 
-/* File uploader box */
+/* 📤 File uploader box */
 .stFileUploader {{
-    background-color: {current_theme['card']};
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background-color: {current_theme['card']} !important;
+    padding: 15px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
 }}
 
-/* File uploader button */
+/* ⬆️ Upload button */
 .stFileUploader>div>div>div>button {{
-    background-color: {current_theme['secondary']};
-    color: white;
-    border-radius: 12px;
-    padding: 10px 20px;
-    border: none;
+    background-color: {current_theme['secondary']} !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 10px 20px !important;
+    border: none !important;
     transition: all 0.3s ease;
 }}
 
-/* Secondary buttons */
+/* 🔘 Secondary buttons */
 .stButton>button[kind="secondary"] {{
     background-color: {current_theme['secondary']} !important;
     color: {current_theme['button_text']} !important;
 }}
 </style>
 """, unsafe_allow_html=True)
+
 
 # -------------------- Brand Logo in Header --------------------
 header_logo_path = "images/ScholarMate.png"  # Update this path to your actual logo file
