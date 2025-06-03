@@ -323,11 +323,33 @@ p, div, span, label,
     border: none !important;
     transition: all 0.3s ease;
 }}
-/* Style the drag-and-drop file uploader container */
+
+/* 📤 File uploader box*/
 .stFileUploader > div > div {{
-    background-color: var(--secondary-background-color);
-    border: 2px dashed var(--neutral-400);  /* Adjust border color */
-    color: var(--text-color);
+    background-color: {current_theme['card']} !important;
+    border: 2px dashed {current_theme['border']} !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
+    color: {current_theme['text']} !important;
+    transition: all 0.3s ease;
+}}
+
+.stFileUploader > div > div:hover {{
+    border-color: {current_theme['primary']} !important;
+    background-color: {current_theme['input_bg']} !important;
+}}
+
+/* File uploader text */
+.stFileUploader > div > div > div > small {{
+    color: {current_theme['text']} !important;
+    opacity: 0.8 !important;
+}}
+
+/* Uploaded files list */
+.stFileUploader > div > div > div > div > div > div > div {{
+    background-color: {current_theme['card']} !important;
+    border: 1px solid {current_theme['border']} !important;
+    color: {current_theme['text']} !important;
 }}
 
 /* 🔘 Secondary buttons */
