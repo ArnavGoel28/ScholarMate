@@ -323,6 +323,12 @@ p, div, span, label,
     border: none !important;
     transition: all 0.3s ease;
 }}
+/* Style the drag-and-drop file uploader container */
+    .stFileUploader > div > div {{
+        background-color: var(--secondary-background-color);
+        border: 2px dashed var(--neutral-400);  /* Adjust border color */
+        color: var(--text-color);
+    }}
 
 /* 🔘 Secondary buttons */
 .stButton>button[kind="secondary"] {{
