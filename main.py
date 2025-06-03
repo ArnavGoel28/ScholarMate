@@ -139,6 +139,8 @@ def apply_theme(theme_name, dark_mode):
     
     return theme
 
+current_theme = {}
+
 # -------------------- Initialize Session State --------------------
 if 'theme' not in st.session_state:
     st.session_state.theme = 'academic'
@@ -156,8 +158,6 @@ if 'mcqs_output' not in st.session_state:
     st.session_state.mcqs_output = ""
 if 'topic_explanation_output' not in st.session_state:
     st.session_state.topic_explanation_output = ""
-
-current_theme = apply_theme(st.session_state.theme, st.session_state.dark_mode)
 
 # -------------------- Enhanced CSS --------------------
 st.markdown(f"""
@@ -403,6 +403,7 @@ with st.sidebar:
         3. Use the **tools** to generate summaries, MCQs, and explanations
         """)
 
+current_theme = apply_theme(st.session_state.theme, st.session_state.dark_mode)
 # Initialize LLM
 llm = ChatGroq(model_name="llama3-70b-8192", temperature=temperature)
 
