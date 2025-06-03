@@ -312,28 +312,28 @@ st.markdown(f"""
     }}
     
     /* Force the entire app background (even fullscreen mode) */
-html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
+html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
     background-color: {{current_theme['background']}};
     color: {{current_theme['text']}};
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+}}
 
 /* Sidebar background fix */
-[data-testid="stSidebar"] {
+[data-testid="stSidebar"] {{
     background-color: {{current_theme['sidebar']}} !important;
     color: white;
-}
+}}
 
 /* Sidebar elements */
 [data-testid="stSidebar"] .stSelectbox, 
 [data-testid="stSidebar"] .stExpander, 
 [data-testid="stSidebar"] .stSlider, 
-[data-testid="stSidebar"] .stToggle {
+[data-testid="stSidebar"] .stToggle {{
     background-color: {{current_theme['card']}};
     color: {{current_theme['text']}};
     border-radius: 10px;
     padding: 10px;
-}
+}}
 
 /* File uploader box container */
 .stFileUploader {{
