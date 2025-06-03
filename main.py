@@ -314,14 +314,82 @@ p, div, span, label,
     box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
 }}
 
-/* ⬆️ Upload button */
-.stFileUploader>div>div>div>button {{
-    background-color: {current_theme['secondary']} !important;
-    color: white !important;
+.stFileUploader > section > div {{
+    background-color: {current_theme['card']} !important;
+    border: 2px dashed {current_theme['border']} !important;
     border-radius: 12px !important;
-    padding: 10px 20px !important;
-    border: none !important;
+    color: {current_theme['text']} !important;
     transition: all 0.3s ease;
+}}
+
+/* Hover state */
+.stFileUploader > section > div:hover {{
+    border-color: {current_theme['primary']} !important;
+    background-color: {current_theme['input_bg']} !important;
+}}
+
+/* "Drag and drop files here" text */
+.stFileUploader > section > div > div > small {{
+    color: {current_theme['text']} !important;
+    opacity: 0.8 !important;
+}}
+
+/* File size info text */
+.stFileUploader > section > div > div > small:nth-child(2) {{
+    color: {current_theme['text']} !important;
+    opacity: 0.6 !important;
+}}
+
+/* Browse files button */
+.stFileUploader > section > div > button {{
+    background-color: {current_theme['primary']} !important;
+    color: {current_theme['button_text']} !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    margin-top: 12px !important;
+}}
+
+/* Main dropdown container */
+[data-testid="stSidebar"] .stSelectbox > div {{
+    background-color: {current_theme['card']} !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+}}
+
+/* Dropdown trigger */
+[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div {{
+    background-color: {current_theme['card']} !important;
+    color: {current_theme['text']} !important;
+    border-color: {current_theme['border']} !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+}}
+
+/* Dropdown options container */
+[data-testid="stSidebar"] .stSelectbox div[role="listbox"] {{
+    background-color: {current_theme['card']} !important;
+    border: 1px solid {current_theme['border']} !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}}
+
+/* Individual options */
+[data-testid="stSidebar"] .stSelectbox div[role="option"] {{
+    background-color: {current_theme['card']} !important;
+    color: {current_theme['text']} !important;
+}}
+
+/* Hovered option */
+[data-testid="stSidebar"] .stSelectbox div[role="option"]:hover {{
+    background-color: {current_theme['primary']} !important;
+    color: {current_theme['button_text']} !important;
+}}
+
+/* Selected option */
+[data-testid="stSidebar"] .stSelectbox div[aria-selected="true"] {{
+    background-color: {current_theme['secondary']} !important;
+    color: {current_theme['button_text']} !important;
 }}
 
 /* 📤 File uploader box*/
