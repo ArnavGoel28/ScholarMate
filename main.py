@@ -162,190 +162,162 @@ current_theme = apply_theme(st.session_state.theme, st.session_state.dark_mode)
 # -------------------- Enhanced CSS --------------------
 st.markdown(f"""
 <style>
-/* Brand logo styles */
-    .brand-logo {{
-        position: absolute;
-        top: -65px;
-        left: 85px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        z-index: 1000;
-        padding: 5px 10px;
-    }}
-    
-    .brand-logo img {{
-        height: 60px;
-        width: auto;
-        border-radius: 10px
-    }}
-    
-    .main .block-container {{
-        padding-top: 60px;
-    }}
-    
-
-    /* Adjust main content to account for logo */
-    .main .block-container {{
-        padding-top: 60px;
-    }}
-    /* Main container styles */
-    .main {{
-        background-color: {current_theme['background']};
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }}
-
-    /* Sidebar styles */
-    .sidebar .sidebar-content {{
-        background-color: {current_theme['sidebar']};
-        color: white;
-        padding: 20px;
-    }}
-
-    /* Button styles */
-    .stButton>button {{
-        background-color: white !important;
-        color: black !important;
-        border-radius: 12px;
-        padding: 10px 20px;
-        border: 1px solid {current_theme['border']} !important;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }}
-
-    .stButton>button:hover {{
-        background-color: {current_theme['primary']} !important;
-        color: white !important;
-        border-color: {current_theme['primary']} !important;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }}
-
-    /* Input fields - Enhanced visibility */
-    .stTextInput>div>div>input,
-    .stTextArea>div>div>textarea {{
-        border-radius: 12px;
-        padding: 12px;
-        border: 1px solid {current_theme['border']};
-        background-color: {current_theme['input_bg']};
-        color: {current_theme['input_text']} !important;
-    }}
-
-    /* Placeholder text - Better contrast */
-    .stTextInput>div>div>input::placeholder,
-    .stTextArea>div>div>textarea::placeholder {{
-        color: {current_theme['input_text']} !important;
-        opacity: 0.7 !important;
-    }}
-
-    /* Active input highlight */
-    .stTextInput>div>div>input:focus,
-    .stTextArea>div>div>textarea:focus {{
-        border-color: {current_theme['primary']} !important;
-        box-shadow: 0 0 0 2px {current_theme['primary']}33 !important;
-    }}
-
-    /* Custom card styles */
-    .custom-card {{
-        background-color: {current_theme['card']};
-        border-radius: 16px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        color: {current_theme['text']};
-    }}
-
-    /* Confidence indicators */
-    .confidence-high {{
-        color: #28a745;
-        font-weight: bold;
-    }}
-    .confidence-medium {{
-        color: #ffc107;
-        font-weight: bold;
-    }}
-    .confidence-low {{
-        color: #dc3545;
-        font-weight: bold;
-    }}
-
-    /* Greeting message */
-    .greeting {{
-        font-size: 1.2rem;
-        padding: 10px 0px 0px 0px;
-        margin-bottom: 20px;
-        text-align: center;
-        color: {current_theme['text']};
-    }}
-
-    /* Tool section headers */
-    .tool-header {{
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        color: {current_theme['text']};
-        font-weight: 600;
-    }}
-
-    /* Document list styles */
-    .document-list {{
-        padding: 10px;
-        background-color: {current_theme['card']};
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }}
-
-    /* File uploader styles */
-    .stFileUploader>div>div>div>button {{
-        background-color: {current_theme['secondary']};
-        color: white;
-        border-radius: 12px;
-        padding: 10px 20px;
-        border: none;
-        transition: all 0.3s ease;
-    }}
-
-    /* Secondary buttons */
-    .stButton>button[kind="secondary"] {{
-        background-color: {current_theme['secondary']} !important;
-        color: {current_theme['button_text']} !important;
-    }}
-    
-    /* Force the entire app background (even fullscreen mode) */
+/* Global Background Fix */
 html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
-    background-color: {{current_theme['background']}};
-    color: {{current_theme['text']}};
+    background-color: {current_theme['background']};
+    color: {current_theme['text']};
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }}
 
-/* Sidebar background fix */
+/* Sidebar Styling Fix */
 [data-testid="stSidebar"] {{
-    background-color: {{current_theme['sidebar']}} !important;
+    background-color: {current_theme['sidebar']} !important;
     color: white;
 }}
 
-/* Sidebar elements */
+/* Sidebar Elements */
 [data-testid="stSidebar"] .stSelectbox, 
 [data-testid="stSidebar"] .stExpander, 
 [data-testid="stSidebar"] .stSlider, 
 [data-testid="stSidebar"] .stToggle {{
-    background-color: {{current_theme['card']}};
-    color: {{current_theme['text']}};
+    background-color: {current_theme['card']};
+    color: {current_theme['text']};
     border-radius: 10px;
     padding: 10px;
 }}
 
-/* File uploader box container */
-.stFileUploader {{
-    background-color: {{current_theme['card']}};
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+/* Brand logo styles */
+.brand-logo {{
+    position: absolute;
+    top: -65px;
+    left: 85px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    padding: 5px 10px;
 }}
 
-/* Upload button */
+.brand-logo img {{
+    height: 60px;
+    width: auto;
+    border-radius: 10px
+}}
+
+.main .block-container {{
+    padding-top: 60px;
+}}
+
+/* Main container */
+.main {{
+    background-color: {current_theme['background']};
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}}
+
+/* Button styles */
+.stButton>button {{
+    background-color: white !important;
+    color: black !important;
+    border-radius: 12px;
+    padding: 10px 20px;
+    border: 1px solid {current_theme['border']} !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}}
+
+.stButton>button:hover {{
+    background-color: {current_theme['primary']} !important;
+    color: white !important;
+    border-color: {current_theme['primary']} !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}}
+
+/* Input fields */
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea {{
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid {current_theme['border']};
+    background-color: {current_theme['input_bg']};
+    color: {current_theme['input_text']} !important;
+}}
+
+/* Placeholder */
+.stTextInput>div>div>input::placeholder,
+.stTextArea>div>div>textarea::placeholder {{
+    color: {current_theme['input_text']} !important;
+    opacity: 0.7 !important;
+}}
+
+/* Focus effect */
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus {{
+    border-color: {current_theme['primary']} !important;
+    box-shadow: 0 0 0 2px {current_theme['primary']}33 !important;
+}}
+
+/* Custom card */
+.custom-card {{
+    background-color: {current_theme['card']};
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: {current_theme['text']};
+}}
+
+/* Confidence indicators */
+.confidence-high {{
+    color: #28a745;
+    font-weight: bold;
+}}
+.confidence-medium {{
+    color: #ffc107;
+    font-weight: bold;
+}}
+.confidence-low {{
+    color: #dc3545;
+    font-weight: bold;
+}}
+
+/* Greeting */
+.greeting {{
+    font-size: 1.2rem;
+    padding: 10px 0px 0px 0px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: {current_theme['text']};
+}}
+
+/* Tool headers */
+.tool-header {{
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: {current_theme['text']};
+    font-weight: 600;
+}}
+
+/* Document list */
+.document-list {{
+    padding: 10px;
+    background-color: {current_theme['card']};
+    border-radius: 8px;
+    margin-bottom: 15px;
+}}
+
+/* File uploader box */
+.stFileUploader {{
+    background-color: {current_theme['card']};
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}}
+
+/* File uploader button */
 .stFileUploader>div>div>div>button {{
-    background-color: {{current_theme['secondary']}};
+    background-color: {current_theme['secondary']};
     color: white;
     border-radius: 12px;
     padding: 10px 20px;
@@ -353,16 +325,14 @@ html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {{
     transition: all 0.3s ease;
 }}
 
-/* Button hover effect */
-.stButton>button:hover {{
-    background-color: {{current_theme['primary']}} !important;
-    color: white !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+/* Secondary buttons */
+.stButton>button[kind="secondary"] {{
+    background-color: {current_theme['secondary']} !important;
+    color: {current_theme['button_text']} !important;
 }}
-
 </style>
 """, unsafe_allow_html=True)
+
 # -------------------- Brand Logo in Header --------------------
 header_logo_path = "images/ScholarMate.png"  # Update this path to your actual logo file
 
