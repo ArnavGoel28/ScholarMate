@@ -310,6 +310,57 @@ st.markdown(f"""
         background-color: {current_theme['secondary']} !important;
         color: {current_theme['button_text']} !important;
     }}
+    
+    /* Force the entire app background (even fullscreen mode) */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
+    background-color: {{current_theme['background']}};
+    color: {{current_theme['text']}};
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar background fix */
+[data-testid="stSidebar"] {
+    background-color: {{current_theme['sidebar']}} !important;
+    color: white;
+}
+
+/* Sidebar elements */
+[data-testid="stSidebar"] .stSelectbox, 
+[data-testid="stSidebar"] .stExpander, 
+[data-testid="stSidebar"] .stSlider, 
+[data-testid="stSidebar"] .stToggle {
+    background-color: {{current_theme['card']}};
+    color: {{current_theme['text']}};
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* File uploader box container */
+.stFileUploader {{
+    background-color: {{current_theme['card']}};
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}}
+
+/* Upload button */
+.stFileUploader>div>div>div>button {{
+    background-color: {{current_theme['secondary']}};
+    color: white;
+    border-radius: 12px;
+    padding: 10px 20px;
+    border: none;
+    transition: all 0.3s ease;
+}}
+
+/* Button hover effect */
+.stButton>button:hover {{
+    background-color: {{current_theme['primary']}} !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}}
+
 </style>
 """, unsafe_allow_html=True)
 # -------------------- Brand Logo in Header --------------------
